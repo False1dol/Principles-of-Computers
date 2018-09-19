@@ -1,43 +1,43 @@
-def twos_complement(val, bits):                                         # Function for finding the 2's
-                                                                        # complement of a binary number.
+def twos_complement(val, bits):                                                             
+                                                                                            
                                                                         
-    if (val & (1 << (bits - 1))) != 0:                                  # if sign bit is set e.g., 
-        val = val - (1 << bits)                                         # 8bit: 128-255, compute the 
-    return(val & ((2 ** bits) - 1))                                     # negative value.
+    if (val & (1 << (bits - 1))) != 0:                                                      # if sign bit is set e.g., 
+        val = val - (1 << bits)                                                             # 8bit: 128-255, compute the 
+    return(val & ((2 ** bits) - 1))                                                         # negative value.
 
-def decimal_to_binary_8bit(num):                                        # Function for Converting Decimals
-                                                                        # to 8-bit Binaries
+def decimal_to_binary_8bit(num):                                                            
+                                                                                            
     
-    if num < 0:                                                         # If the number is negative, pass 
-        return decimal_to_binary_8bit(twos_complement(num, 8))          # it through the two's complement
-                                                                        # function.
+    if num < 0:                                                                             # If the number is negative, pass 
+        return decimal_to_binary_8bit(twos_complement(num, 8))                              # it through the two's complement
+                                                                                            # function.
 
-    elif num > 255:                                                     # If the number is greater than 255,
-        return format(num, '08b')[1:]                                   # i.e., 2^8 - 1, then ignore the MSB.
+    elif num > 255:                                                                         # If the number is greater than 255,
+        return format(num, '08b')[1:]                                                       # i.e., 2^8 - 1, then ignore the MSB.
     
     else:
-        return (format(num, '08b'))                                     # Else, just return the binary number.
+        return (format(num, '08b'))                                                         
     
-def right_shift(strnum):                                                # Function for right shifting a
-                                                                        # Binary number.
+def right_shift(strnum):                                                                   
+                                                                                            
                                                                         
-    if strnum[0] == '0':                                                # If MSB of the number is 1, the
-        strnum = '0' + strnum                                           # first bit of the shifted number is
-                                                                        # also 1 to maintain signed magnitude.
+    if strnum[0] == '0':                                                                    # If MSB of the number is 1, the
+        strnum = '0' + strnum                                                               # first bit of the shifted number is
+                                                                                            # also 1 to maintain signed magnitude.
     elif strnum[0] == '1':
         strnum = '1' + strnum
         
     return [strnum[:16],strnum[-1]]
 
-def binary_adder(strnumA, strnumB):                                     # Function to add two binary numbers
+def binary_adder(strnumA, strnumB):                                                         
     
-    strsum = ''                                                         # String storing the sum.
+    strsum = ''                                                                             # String storing the sum.
     
-    carryover = 0                                                       # Carryover from addition, if any.
+    carryover = 0                                                                           # Carryover from addition, if any.
     
-    for i in range(len(strnumA)-1,-1,-1):                               # Iterating over the digits, doing
-                                                                        # bit-by-bit addition and taking care
-                                                                        # of the carryover.
+    for i in range(len(strnumA)-1,-1,-1):                                                   # Iterating over the digits, doing
+                                                                                            # bit-by-bit addition and taking care
+                                                                                            # of the carryover.
         if strnumA[i] == '0' and strnumB[i] == '0':
             if carryover == 0:
                 strsum = '0' + strsum
