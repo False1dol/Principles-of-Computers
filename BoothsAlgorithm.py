@@ -7,12 +7,10 @@ def dectobin8bit(num):
         return (format(num, '08b'))
     
 def rightshift(strnum):
-    print("oldstrm " + strnum)
     if strnum[0] == '0':
         strnum = '0' + strnum
     elif strnum[0] == '1':
         strnum = '1' + strnum
-    print("newstrm " + strnum)
     return [strnum[:16],strnum[-1]]
 
 def twos_complement(val, bits):
@@ -25,8 +23,8 @@ def boothmultiply(multiplier, multiplicand, product, boothbit, i):
                                                                             #there will be 8 iterations
                                                                             #of bit shifting                              
         opbits = product[-1] + boothbit
-        print(opbits)
-        if opbits == '00':                                                  #00 Op Code = No-op
+
+        if opbits == '00':                                                  #00 Op Code = No operation
             
             result = rightshift(product)                                    #Right shifting the Product
             
@@ -68,7 +66,7 @@ def boothmultiply(multiplier, multiplicand, product, boothbit, i):
             
             boothbit = result[1]                                            #Storing the Booth bit
             
-        elif opbits == '11':                                                #11 Op Code = No-op
+        elif opbits == '11':                                                #11 Op Code = No operation
             
             result = rightshift(product)                                    #Storing the result into Product
                                                                             #after right-shifting the bits
@@ -80,4 +78,6 @@ def boothmultiply(multiplier, multiplicand, product, boothbit, i):
         i += 1                                                              #Incrementing i value of the loop
     print(product)
 
-boothmultiply(dectobin8bit(3),dectobin8bit(-6),'00000000'+dectobin8bit(3),str(0),0)
+mplier = dectobin8bit(-105)
+mplicand = dectobin8bit(-29)
+boothmultiply(mplier, mplicand,'00000000' + mplier, str(0), 0)
