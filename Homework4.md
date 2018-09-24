@@ -1,3 +1,28 @@
+Q1) The two's complement integer division algorithm discussed in class is known as the restoring method because the value in the A register must be restored following unsuccessful subtraction.  A slightly more complex approach, known as non restoring, avoids the unnecessary subtraction and addition.  Propose an algorithm for this approach.  
+
+Ans.  
+
+>   ![alt text](https://github.com/MrReese0/IFT510-Problems/blob/master/images/nonrestoring2.png)  
+>   ![alt text](https://github.com/MrReese0/IFT510-Problems/blob/master/images/nonrestoring1.png)  
+>   
+>   
+>   1) Put x in register A, d in register B, 0 in register P, and perform n divide steps (n is the quotient word length)  
+>  
+>   2) If P is negative  
+>  (i-a) Shift the register pair (P,A) one bit left  
+>  (ii-a) Add the contents of register B to P 
+>  
+>   3) If P is positive  
+>  (i-b) Shift the register pair (P,A) one bit left  
+>  (ii-b) Subtract the contents of register B from P  
+>  (iii) If P is negative, set the low-order bit of A to 0,  
+>     otherwise set it to 1  
+>  
+>    4) After n cycles  
+>   (a) The quotient is in A  
+>   (b) If P is positive, it is the remainder, otherwise it has to be restored  
+>   (c) (add B to it) to get the remainder  
+
 
 
 Q2) Divide -145 by 13 in binary twos complement, using 12-bit words.  Use the restoring method algorithm.  
