@@ -18,7 +18,7 @@ Ans.
 >        (iii) If P is negative, set the low-order bit of A to 0,  
 >        otherwise set it to 1  
 >  
->     4) After n cycles  
+>    4) After n cycles  
 >        (a) The quotient is in A  
 >        (b) If P is positive, it is the remainder, otherwise it has to be restored  
 >        (c) (add B to it) to get the remainder  
