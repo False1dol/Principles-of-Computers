@@ -1,3 +1,5 @@
+
+
 Q2) Divide -145 by 13 in binary twos complement, using 12-bit words.  Use the restoring method algorithm.  
 Ans.  
   
