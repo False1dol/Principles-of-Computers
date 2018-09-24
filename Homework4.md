@@ -4,6 +4,7 @@ Q2) Divide -145 by 13 in binary twos complement, using 12-bit words.  Use the re
 Ans.  
   
 > Since restoring method only works for unsigned integers, we'll divide 145 by 13 first. Then we'll take the two's complement of the quotient.
+>  
 >
 >| Cycle | Operation      | A                                    | Q              | Q<sub>0</sub> |
 >|-------|----------------|--------------------------------------|----------------|----|
@@ -64,6 +65,6 @@ Ans.
 >|       | Set Q<sub>0</sub>         |= 0 0000 0000 0010 (MSB = 1,ignored)  | 0000 0000 101  | 1  |
 >
 >
-> Quotient = 0000 0000 1011
-> 2's complement of Quotient = 1111 1111 0101
-> Remainder = 0000 0000 0010
+> Quotient = 0000 0000 1011 (11)  
+> 2's complement of Quotient = 1111 1111 0101 (-11)  
+> Remainder = 0000 0000 0010 (2)  
