@@ -98,9 +98,9 @@ Ans.
   
   
     
-Q3) Consider the following:
-a.       Consider a fixed point representation using decimal digits, in which the implied radix point can be in any position (to the right of the least significant digit, to the right of the most significant digit, and so on).  How many decimal digits are needed to represent the approximation of both Planck’s constant (6.63 * 10-27) and Avogadro’s number (6.02 * 1023)?  The implied radix point must be in the same position for both numbers.
-b.      Now consider a decimal floating point format with the exponent stored in a biased representation with a bias of 50.  A normalized representation is assumed.  How many decimal digits are needed to represent these constants in this floating point format?
+Q3) Consider the following:  
+a.       Consider a fixed point representation using decimal digits, in which the implied radix point can be in any position (to the right of the least significant digit, to the right of the most significant digit, and so on).  How many decimal digits are needed to represent the approximation of both Planck’s constant (6.63 * 10-27) and Avogadro’s number (6.02 * 1023)?  The implied radix point must be in the same position for both numbers.  
+b.      Now consider a decimal floating point format with the exponent stored in a biased representation with a bias of 50.  A normalized representation is assumed.  How many decimal digits are needed to represent these constants in this floating point format?  
   
 Ans.  
   
@@ -118,12 +118,14 @@ Ans.
 >   exponent = 127 + 2 = 129 = 10000001
 >   
 >   1 10000001 01000000000000000000000  
-  
+ 
+ 
 >   -6  
 >   6 = 110 = 1.10 x 2<sup>2</sup>  
 >   exponent = 127 + 2 = 129 = 10000001  
 >  
 >   1 10000001 10000000000000000000000  
+  
   
 >   -1.5  
 >   1.5 = 1.1 = 1.1 x 2<sup>0</sup>  
@@ -131,11 +133,13 @@ Ans.
 >  
 >   1 01111111 10000000000000000000000  
   
+  
 >   384  
 >   384 = 384-256 = 128 -128 = 0; = 110000000 = 1.1 x 2<sup>8</sup>  
 >   exponent = 8 + 127 = 135 = 10000111  
 >  
 >   0 10000111 10000000000000000000000  
+  
   
 >   1/16  
 >   1/16 = .0001 = 1.0 x 2<sup>-4</sup>  
@@ -143,9 +147,40 @@ Ans.
 >  
 >   0 01111011 00000000000000000000000  
   
+  
 >   -1/32  
 >   1/32 = .00001 = 1.0 x 2<sup>-5</sup>  
 >   exponent = 127 – 5 = 122 = 01111010  
 >  
 >   1 01111010 00000000000000000000000  
 
+
+
+Q5) The following numbers use the IEEE 32-bit floating point format.  What is the equivalent decimal value?  
+a.       1 10000011 11000000000000000000000  
+b.      0 01111110 10100000000000000000000  
+c.       0 10000000 000000000000000000000000  
+  
+Ans.  
+  
+>   a. 1 10000011 11000000000000000000000  
+>      sign = -  
+>      exponent = 131 – 127 = 4  
+>      1.11 x 24 = 11100 = 28  
+>      -28  
+  
+>   b. 0 01111110 10100000000000000000000  
+>      sign = +  
+>      exponent = 126 – 127 = -1  
+>      1.101 x 2-1 = .1101 = ½ + ¼ + 1/16 = .8125  
+>      .8125  
+  
+>   c. 0 10000000 00000000000000000000000  
+>      sign = +  
+>      exponent = 128 – 127 = 1  
+>      1.0 x 21 = 10 = 2  
+>      2  
+  
+    
+
+  
