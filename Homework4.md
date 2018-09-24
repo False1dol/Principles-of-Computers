@@ -68,3 +68,4 @@ Ans.
 > Quotient = 0000 0000 1011 (11)  
 > 2's complement of Quotient = 1111 1111 0101 (-11)  
 > Remainder = 0000 0000 0010 (2)  
+> -145 / 13 = -11(Q) + 2(R)  
