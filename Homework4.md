@@ -2,26 +2,26 @@ Q1) The two's complement integer division algorithm discussed in class is known 
 
 Ans.  
 
->   ![alt text](https://github.com/MrReese0/IFT510-Problems/blob/master/images/nonrestoring2.png)  
->   ![alt text](https://github.com/MrReese0/IFT510-Problems/blob/master/images/nonrestoring1.png)  
+>    ![alt text](https://github.com/MrReese0/IFT510-Problems/blob/master/images/nonrestoring2.png)  
+>    ![alt text](https://github.com/MrReese0/IFT510-Problems/blob/master/images/nonrestoring1.png)  
 >   
 >   
->   1) Put x in register A, d in register B, 0 in register P, and perform n divide steps (n is the quotient word length)  
+>    1) Put x in register A, d in register B, 0 in register P, and perform n divide steps (n is the quotient word length)  
 >  
->   2) If P is negative  
->  (i-a) Shift the register pair (P,A) one bit left  
->  (ii-a) Add the contents of register B to P 
+>    2) If P is negative  
+>        (i-a) Shift the register pair (P,A) one bit left  
+>        (ii-a) Add the contents of register B to P 
 >  
->   3) If P is positive  
->  (i-b) Shift the register pair (P,A) one bit left  
->  (ii-b) Subtract the contents of register B from P  
->  (iii) If P is negative, set the low-order bit of A to 0,  
->     otherwise set it to 1  
+>    3) If P is positive  
+>        (i-b) Shift the register pair (P,A) one bit left  
+>        (ii-b) Subtract the contents of register B from P  
+>        (iii) If P is negative, set the low-order bit of A to 0,  
+>        otherwise set it to 1  
 >  
->    4) After n cycles  
->   (a) The quotient is in A  
->   (b) If P is positive, it is the remainder, otherwise it has to be restored  
->   (c) (add B to it) to get the remainder  
+>     4) After n cycles  
+>        (a) The quotient is in A  
+>        (b) If P is positive, it is the remainder, otherwise it has to be restored  
+>        (c) (add B to it) to get the remainder  
   
   
   
@@ -29,7 +29,7 @@ Q2) Divide -145 by 13 in binary twos complement, using 12-bit words.  Use the re
   
 Ans.  
   
-> Since restoring method only works for unsigned integers, we'll divide 145 by 13 first. Then we'll take the two's complement of the quotient.
+>    Since restoring method only works for unsigned integers, we'll divide 145 by 13 first. Then we'll take the two's complement of the quotient.
 >  
 >
 >| Cycle | Operation      | A                                    | Q              | Q<sub>0</sub> |
@@ -91,16 +91,16 @@ Ans.
 >|       | Set Q<sub>0</sub>         |= 0 0000 0000 0010 (MSB = 1,ignored)  | 0000 0000 101  | 1  |
 >
 >
-> Quotient = 0000 0000 1011 (11)  
-> 2's complement of Quotient = 1111 1111 0101 (-11)  
-> Remainder = 0000 0000 0010 (2)  
-> -145 / 13 = -11(Q) + 2(R)  
+>    Quotient = 0000 0000 1011 (11)  
+>    2's complement of Quotient = 1111 1111 0101 (-11)  
+>    Remainder = 0000 0000 0010 (2)  
+>    -145 / 13 = -11(Q) + 2(R)  
   
   
     
 Q3) Consider the following:  
-a.       Consider a fixed point representation using decimal digits, in which the implied radix point can be in any position (to the right of the least significant digit, to the right of the most significant digit, and so on).  How many decimal digits are needed to represent the approximation of both Planck’s constant (6.63 * 10-27) and Avogadro’s number (6.02 * 1023)?  The implied radix point must be in the same position for both numbers.  
-b.      Now consider a decimal floating point format with the exponent stored in a biased representation with a bias of 50.  A normalized representation is assumed.  How many decimal digits are needed to represent these constants in this floating point format?  
+    a. Consider a fixed point representation using decimal digits, in which the implied radix point can be in any position (to the right of the least significant digit, to the right of the most significant digit, and so on).  How many decimal digits are needed to represent the approximation of both Planck’s constant (6.63 * 10-27) and Avogadro’s number (6.02 * 1023)?  The implied radix point must be in the same position for both numbers.  
+     b. Now consider a decimal floating point format with the exponent stored in a biased representation with a bias of 50.  A normalized representation is assumed.  How many decimal digits are needed to represent these constants in this floating point format?  
   
 Ans.  
   
@@ -113,73 +113,73 @@ Q4) Express the following numbers in IEEE 32-bit floating point format: -5; -6; 
 
 Ans.  
   
->   -5  
->   5 = 101 = 1.01 x 2<sup>2</sup>  
->   exponent = 127 + 2 = 129 = 10000001
+>    -5  
+>    5 = 101 = 1.01 x 2<sup>2</sup>  
+>    exponent = 127 + 2 = 129 = 10000001
 >   
->   1 10000001 01000000000000000000000  
+>    1 10000001 01000000000000000000000  
  
  
->   -6  
->   6 = 110 = 1.10 x 2<sup>2</sup>  
->   exponent = 127 + 2 = 129 = 10000001  
+>    -6  
+>    6 = 110 = 1.10 x 2<sup>2</sup>  
+>    exponent = 127 + 2 = 129 = 10000001  
 >  
->   1 10000001 10000000000000000000000  
+>    1 10000001 10000000000000000000000  
   
   
->   -1.5  
->   1.5 = 1.1 = 1.1 x 2<sup>0</sup>  
->   exponent = 127 = 01111111  
+>    -1.5  
+>    1.5 = 1.1 = 1.1 x 2<sup>0</sup>  
+>    exponent = 127 = 01111111  
 >  
->   1 01111111 10000000000000000000000  
+>    1 01111111 10000000000000000000000  
   
   
->   384  
->   384 = 384-256 = 128 -128 = 0; = 110000000 = 1.1 x 2<sup>8</sup>  
->   exponent = 8 + 127 = 135 = 10000111  
+>    384  
+>    384 = 384-256 = 128 -128 = 0; = 110000000 = 1.1 x 2<sup>8</sup>  
+>    exponent = 8 + 127 = 135 = 10000111  
 >  
->   0 10000111 10000000000000000000000  
+>    0 10000111 10000000000000000000000  
   
   
->   1/16  
->   1/16 = .0001 = 1.0 x 2<sup>-4</sup>  
->   exponent = 127 – 4 = 123 = 01111011  
+>    1/16  
+>    1/16 = .0001 = 1.0 x 2<sup>-4</sup>  
+>    exponent = 127 – 4 = 123 = 01111011  
 >  
->   0 01111011 00000000000000000000000  
+>    0 01111011 00000000000000000000000  
   
   
->   -1/32  
->   1/32 = .00001 = 1.0 x 2<sup>-5</sup>  
->   exponent = 127 – 5 = 122 = 01111010  
+>    -1/32  
+>    1/32 = .00001 = 1.0 x 2<sup>-5</sup>  
+>    exponent = 127 – 5 = 122 = 01111010  
 >  
->   1 01111010 00000000000000000000000  
+>    1 01111010 00000000000000000000000  
 
 
 
 Q5) The following numbers use the IEEE 32-bit floating point format.  What is the equivalent decimal value?  
-a.       1 10000011 11000000000000000000000  
-b.      0 01111110 10100000000000000000000  
-c.       0 10000000 000000000000000000000000  
+    a. 1 10000011 11000000000000000000000  
+    b. 0 01111110 10100000000000000000000  
+    c. 0 10000000 000000000000000000000000  
   
 Ans.  
   
->   a. 1 10000011 11000000000000000000000  
->      sign = -  
->      exponent = 131 – 127 = 4  
->      1.11 x 24 = 11100 = 28  
->      -28  
+>    a. 1 10000011 11000000000000000000000  
+>        sign = -  
+>        exponent = 131 – 127 = 4  
+>        1.11 x 24 = 11100 = 28  
+>        -28  
   
->   b. 0 01111110 10100000000000000000000  
->      sign = +  
->      exponent = 126 – 127 = -1  
->      1.101 x 2-1 = .1101 = ½ + ¼ + 1/16 = .8125  
->      .8125  
+>    b. 0 01111110 10100000000000000000000  
+>        sign = +  
+>        exponent = 126 – 127 = -1  
+>        1.101 x 2-1 = .1101 = ½ + ¼ + 1/16 = .8125  
+>        .8125  
   
->   c. 0 10000000 00000000000000000000000  
->      sign = +  
->      exponent = 128 – 127 = 1  
->      1.0 x 21 = 10 = 2  
->      2  
+>    c. 0 10000000 00000000000000000000000  
+>        sign = +  
+>        exponent = 128 – 127 = 1  
+>        1.0 x 21 = 10 = 2  
+>        2  
   
     
 
