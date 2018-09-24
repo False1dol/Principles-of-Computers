@@ -1,7 +1,8 @@
-Q2) Divide -145 by 13 in binary twos complement, using 12-bit words.  Use the restoring method algorithm.
-Ans.
+Q2) Divide -145 by 13 in binary twos complement, using 12-bit words.  Use the restoring method algorithm.  
+Ans.  
+  
 > Since restoring method only works for unsigned integers, we'll divide 145 by 13 first. Then we'll take the two's complement of the quotient.
-
+>
 >| Cycle | Operation      | A                                    | Q              | Q<sub>0</sub> |
 >|-------|----------------|--------------------------------------|----------------|----|
 >| 0     | Initialization |  0 0000 0000 0000                    | 0000 1001 0001 | -  |
