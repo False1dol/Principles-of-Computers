@@ -1,2 +1,2 @@
-# IFT 510: Principles of Computers for Information Technology at Arizona State University under Professor Jim Helm.
-# Some of the programming problems solved in this class are put in this repository.
+#Some of the concepts that I've learnt and covered in COA (Computer Organization & Architecture) and PoC (Principles of Computers).
+#A few problems and algorithms have also been implemented in Python.
