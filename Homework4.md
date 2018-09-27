@@ -102,10 +102,28 @@ Q3) Consider the following:
     a. Consider a fixed point representation using decimal digits, in which the implied radix point can be in any position (to the right of the least significant digit, to the right of the most significant digit, and so on).  How many decimal digits are needed to represent the approximation of both Planck’s constant (6.63 * 10-27) and Avogadro’s number (6.02 * 1023)?  The implied radix point must be in the same position for both numbers.  
      b. Now consider a decimal floating point format with the exponent stored in a biased representation with a bias of 50.  A normalized representation is assumed.  How many decimal digits are needed to represent these constants in this floating point format?  
   
-Ans.  
+Ans 3 (a).  
   
->  
->  
+>    Planck’s constant:  
+>    6.63 x 10<sup>-27</sup> -> 0.<u>00000000000000000000000000663</u> = 29  
+>    Avogadro’s number:  
+>    6.02 x 10<sup>23</sup> -> <u>602000000000000000000000</u>.0 = 24  
+>    To represent the approximation of Planck’s constant, 29 radix-10 fractional digits  
+>    are needed.  
+>    The approximation of Avogadro’s number requires 24 integer decimal digits.  
+>    To represent the approximations of both Planck’s constant and Avogadro’s  
+>    number in fixed-point number format, 29 + 24 = 53 radix-10 digits are needed.  
+  
+  
+Ans 3 (b).  
+  
+>    In the considered radix-10 base-10 biased representation for the exponent, the  
+>    exponent of both Planck’s constant and Avogadro’s number can be represented  
+>    using 2 digits, because 27 + 50 = 77 and 23 + 50 = 73.  
+>    To represent the significands, 3 radix-10 digits are required. Therefore, to  
+>    Represent the approximations of both Planck’s constant and Avogadro’s number  
+>    In a floating-point radix-10 base-10 number format, 3 + 2 = 5 decimal digits are  
+>    needed.  
   
   
   
