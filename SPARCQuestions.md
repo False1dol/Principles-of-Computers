@@ -23,6 +23,8 @@
 
 ![alt text](https://github.com/MrReese0/IFT510-Problems/blob/master/images/Activity2Q2.png)  
   
+  Ans.  
+  
   
 >    ![alt text](https://github.com/MrReese0/IFT510-Problems/blob/master/images/Activity2A2.png)    
 
