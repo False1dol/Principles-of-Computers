@@ -11,7 +11,7 @@
 
     Ans.  
 
->    1. OR src with Go and store the result in dst.
+>    1. OR src with G0 and store the result in dst.
 >    2. SUBCC src2 from src1 and store the result in G0.
 >    3. ORCC src1 with G0 and store the result in G0.
 >    4. XNOR dst with G0.
